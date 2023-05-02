@@ -4,13 +4,15 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
 
     const { signIn,logInWithGoogle } = useContext(AuthContext);
     const [error, setError] = useState("");
     const navigate = useNavigate();
-
+    const from = location.state?.from?.pathname || "/";
+    const googleProvider = new GoogleAuthProvider();
 
     const handleSignIn = (event) => {
         event.preventDefault();
@@ -31,7 +33,19 @@ const Login = () => {
             setError(error.message);
           });
       };
-     
+      const handleGoogleSignIn = () => {
+        logInWithGoogle(googleProvider)
+          .then((result) => {
+            const user = result.user;
+            console.log(user);
+            setError("");
+            navigate(from, { replace: true });
+          })
+          .catch((error) => {
+            console.error(error);
+            setError(error.message);
+          });
+      }
   return (
     <div className="w-11/12 md:w-7/12 lg:w-5/12 mx-auto my-8">
     <div>
@@ -91,7 +105,7 @@ const Login = () => {
         </div>
         <div className="flex flex-col justify-center lg:flex-row lg:justify-between">
           <button
-           
+           onClick={handleGoogleSignIn}
             aria-label="Log in with Google"
             className="w-12/12 lg:w-6/12 p-3 rounded-md flex items-center justify-center font-semibold text-lg lg:mr-2 bg-[#4285F4] text-secondary mb-3 lg:mb-0"
           >
