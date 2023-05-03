@@ -4,15 +4,16 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider,GithubAuthProvider } from "firebase/auth";
 
 const Login = () => {
 
-    const { signIn,logInWithGoogle } = useContext(AuthContext);
+    const { signIn,logInWithGoogle,logInWithGithub } = useContext(AuthContext);
     const [error, setError] = useState("");
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || "/";
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const handleSignIn = (event) => {
         event.preventDefault();
@@ -45,7 +46,21 @@ const Login = () => {
             console.error(error);
             setError(error.message);
           });
-      }
+
+      };
+      const handleGithubSignIn = () => {
+        logInWithGithub(githubProvider)
+          .then((result) => {
+            const user = result.user;
+            console.log(user);
+            setError("");
+            navigate(from, { replace: true });
+          })
+          .catch((error) => {
+            console.error(error);
+            setError(error.message);
+          });
+      };
   return (
     <div className="w-11/12 md:w-7/12 lg:w-5/12 mx-auto my-8">
     <div>
@@ -119,7 +134,7 @@ const Login = () => {
             <h3 className="ml-3">Log in with Google</h3>
           </button>
           <button
-           
+           onClick={handleGithubSignIn}
             aria-label="Log in with GitHub"
             className="w-12/12 lg:w-6/12 p-3 rounded-md flex items-center justify-center font-semibold text-lg lg:ml-2 bg-[#161B22] text-secondary"
           >

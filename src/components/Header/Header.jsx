@@ -19,7 +19,7 @@ const Header = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+    <div className="bg-zinc-100 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8">
       <div className="relative flex items-center justify-between">
         <Link
           aria-label="Company"
