@@ -11,6 +11,8 @@ import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import AuthProvider from './pages/Provider/AuthProvider';
+import Blog from './pages/Blog/Blog';
+import ChifDetail from './pages/ChefDetails/ChifDetail';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,19 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
+      {
+        path:"blog",
+        element:<Blog></Blog>
+      },
+      {
+        path: "/chifDetail/:id",
+        element: <ChifDetail></ChifDetail>,
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/chef/${params.id}`
+          ),
+      },
+      
     ]
   },
 ]);
