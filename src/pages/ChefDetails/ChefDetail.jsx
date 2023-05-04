@@ -3,7 +3,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ChefDetailsContent from './ChefDetailsContent';
 
-const ChifDetail = () => {
+const ChefDetail = () => {
     const chef = useLoaderData();
     console.log(chef);
     return (
@@ -13,4 +13,4 @@ const ChifDetail = () => {
     );
 };
 
-export default ChifDetail;
+export default ChefDetail;

@@ -8,7 +8,7 @@ const Register = () => {
   const [error, setError] = useState("");
   
 
-  const { signUp, profileUpdate } = useContext(AuthContext);
+  const {  profileUpdate } = useContext(AuthContext);
   
   const [accepted, setAccepted] = useState(false);
   const navigate = useNavigate();

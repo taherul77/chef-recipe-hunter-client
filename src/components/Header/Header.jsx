@@ -118,7 +118,7 @@ const Header = () => {
                   to="/login"
                   aria-label="Log in"
                   title="Log in"
-                  className="font-medium tracking-wide text-neutral transition-colors duration-200 hover:text-primary"
+                  className="font-medium tracking-wide text-neutral "
                 >
                   Log in
                 </Link>
@@ -126,7 +126,7 @@ const Header = () => {
               <li>
                 <Link
                   to="/register"
-                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-secondary transition duration-200 rounded shadow-md bg-primary hover:bg-neutral"
+                  className="font-medium tracking-wide text-neutral "
                   aria-label="Register"
                   title="Register"
                 >

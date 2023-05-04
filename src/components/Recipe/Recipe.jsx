@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
+import Star from "../../assets/star.png";
 
 const Recipe = ({ recipes }) => {
   const [favorite, setFavorite] = useState(false);
@@ -13,12 +14,12 @@ const Recipe = ({ recipes }) => {
       toast.error("Remove from favorite");
     }
   };
-  const { image, name, description, review } = recipes;
+  const { image, name, description,rating, review } = recipes;
   return (
     <div>
       <div className="container flex flex-col mx-auto e mt-5 lg:flex-row">
         
-      <div className="flexl items-center justify-center p-4 md:p-8 lg:p-12">
+      <div className="flex items-center justify-center p-4 md:p-8 lg:p-12">
               <img src={image} alt="" className="rounded-lg shadow-lg" />
               
             </div>
@@ -27,15 +28,24 @@ const Recipe = ({ recipes }) => {
           <h2 className="text-3xl font-semibold leading-none">
           {name}
           </h2>
-          <p className="mt-4 mb-8 text-sm">
+          <p className="mt-4 mb-2  text-sm">
+            <b>Description : </b>
           {description}
           </p>
-          <p className="mt-2 mb-8 text-sm">
+          <p className="mt-2 mb-2  text-sm"><b>Review : </b>
           {review}
           </p>
+          <div className="flex items-center md-2 space-x-2">
+          <b>Rating : </b>
+                <img className="h-4" src={Star} alt="" />
+                <span className="self-center font-medium text-sm mt-1">
+                  
+                  {rating}
+                </span>
+              </div>
           <button
            onClick={() => handleFavorite()}
-           className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-violet-400 dark:text-gray-900">
+           className="self-start mt-2 px-10 py-3 text-lg  font-medium rounded-3xl dark:bg-violet-400 dark:text-gray-900">
             {favorite ? "Remove from favorite" : "Add to favorite"}
           </button>
         </div>
