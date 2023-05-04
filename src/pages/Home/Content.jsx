@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
+import LazyLoad from 'react-lazy-load';
 import { Link } from "react-router-dom";
+
 
 const Content = ({ chef }) => {
   const { id, chef_ } = chef;
@@ -9,11 +11,15 @@ const Content = ({ chef }) => {
   return (
     <div>
       <div className="w-full max-w-sm hover:scale-105 overflow-hidden bg-white rounded-lg shadow-lg ">
-        <img
+      <LazyLoad >
+      <img
           className="object-cover w-full rounded-xl aspect-square"
           src={chef_.chef_photo}
           alt="avatar"
         />
+    </LazyLoad>
+        
+       
 
         <div className="px-6 py-4">
           <h1 className="text-xl font-semibold text-gray-800 ">

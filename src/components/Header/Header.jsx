@@ -52,16 +52,7 @@ const Header = () => {
               Features
             </Link>
           </li>
-          <li>
-            <Link
-              to="/"
-              aria-label="Our product"
-              title="Our product"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              My Favorite
-            </Link>
-          </li>
+          
           <li>
             <Link
               to="/blog"
@@ -126,7 +117,7 @@ const Header = () => {
               <li>
                 <Link
                   to="/register"
-                  className="font-medium tracking-wide text-neutral "
+                  className="px-6 py-2 font-bold text-cyan-50 border-md rounded-md  bg-gradient-to-r from-blue-400 to-blue-500 "
                   aria-label="Register"
                   title="Register"
                 >

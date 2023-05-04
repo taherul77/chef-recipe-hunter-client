@@ -3,16 +3,15 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import Star from "../../assets/star.png";
+import LazyLoad from 'react-lazy-load';
 
 const Recipe = ({ recipes }) => {
   const [favorite, setFavorite] = useState(false);
   const handleFavorite = () => {
-    setFavorite(!favorite);
-    if (!favorite) {
-      toast.success("Add to favorite");
-    } else {
-      toast.error("Remove from favorite");
-    }
+    setFavorite(true);
+    toast.success("ADDDDDDDDDDD")
+
+   
   };
   const { image, name, description,rating, review } = recipes;
   return (
@@ -20,7 +19,10 @@ const Recipe = ({ recipes }) => {
       <div className="container flex flex-col mx-auto e mt-5 lg:flex-row">
         
       <div className="flex items-center justify-center p-4 md:p-8 lg:p-12">
-              <img src={image} alt="" className="rounded-lg shadow-lg" />
+        <LazyLoad >
+        <img src={image} alt="" className="rounded-lg shadow-lg" />
+        </LazyLoad>
+              
               
             </div>
         
@@ -44,9 +46,10 @@ const Recipe = ({ recipes }) => {
                 </span>
               </div>
           <button
+          disabled={favorite===true}
            onClick={() => handleFavorite()}
-           className="self-start mt-2 px-10 py-3 text-lg  font-medium rounded-3xl dark:bg-violet-400 dark:text-gray-900">
-            {favorite ? "Remove from favorite" : "Add to favorite"}
+           className={`self-start mt-2 px-10 py-3 text-lg  font-medium rounded-3xl dark:bg-violet-400 dark:text-gray-900 disabled:bg-red-500`}>
+            {"Add to favorite"}
           </button>
         </div>
       </div>
