@@ -7,6 +7,7 @@ import Team from "../../components/Team/Team";
 import FAQ from "../../components/FAQ/FAQ";
 import Content from "./Content";
 
+
 const Home = () => {
   const [chef, setChef] = useState([]);
   useEffect(() => {
@@ -19,6 +20,7 @@ const Home = () => {
       <div>
         <Banner></Banner>
       </div>
+      
 
       <div className="container px-6 py-10 mx-auto">
       <h2 className="text-2xl font-semibold text-center 0 capitalize lg:text-3xl ">

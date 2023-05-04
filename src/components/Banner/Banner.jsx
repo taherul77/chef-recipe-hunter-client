@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -20,12 +21,14 @@ const Banner = () => {
             </p>
           </div>
           <div>
+          <Link to="recipes">
           <button
               type="button"
               className="px-6 py-2 font-bold text-cyan-50 border-md rounded-md  bg-gradient-to-r from-blue-400 to-purple-500"
             >
               SHOP NOW
             </button>
+          </Link>
           </div>
         </div>
         <div className="flex items-center justify-center -mx-4 lg:pl-8">

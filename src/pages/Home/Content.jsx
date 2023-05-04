@@ -41,7 +41,7 @@ const Content = ({ chef }) => {
               {chef_.likes}
             </h1>
           </div>
-          <Link to={`/chefDetail/${id}`}>
+          <Link to={`/chef-detail/${id}`}>
             <div className="py-4">
               <button
                 type="button"

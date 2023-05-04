@@ -17,6 +17,7 @@ import { Toaster } from 'react-hot-toast';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Error from './components/Error/Error';
 import Recipes from './pages/Recipes/Recipes';
+import About from './pages/About/About';
 
 const router = createBrowserRouter([
   {
@@ -41,11 +42,15 @@ const router = createBrowserRouter([
         element:<Blog></Blog>
       },
       {
+        path:"/about",
+        element:<About></About>
+      },
+      {
         path:"/recipes",
         element:<Recipes></Recipes>
       },
       {
-        path: "/chefDetail/:id",
+        path: "/chef-detail/:id",
         element:(
           <PrivateRoute>
             <ChefDetail></ChefDetail>

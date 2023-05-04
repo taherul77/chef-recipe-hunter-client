@@ -13,12 +13,12 @@ const Recipe = ({ recipes }) => {
 
    
   };
-  const { image, name, description,rating, ingredients, review } = recipes;
+  const { image, name, description,rating, ingredients,cooking_method, review } = recipes;
   return (
     <div>
       <div className="container flex flex-col mx-auto e mt-5 lg:flex-row">
         
-      <div className="flex items-center justify-center p-4 md:p-8 lg:p-12">
+      <div className="flex items-center justify-center  md:p-8 lg:p-12">
         <LazyLoad >
         <img src={image} alt="" className="rounded-lg shadow-lg" />
         </LazyLoad>
@@ -30,15 +30,19 @@ const Recipe = ({ recipes }) => {
           <h2 className="text-3xl font-semibold leading-none">
           {name}
           </h2>
-          <p className="mt-4 mb-2  text-sm">
+          <p className="mt-2 mb-2  text-sm">
             <b>Description : </b>
           {description}
           </p>
-          <p className="mt-4 mb-2  text-sm">
+          <p className=" mb-2  text-sm">
             <b>Ingredients : </b>
           {ingredients}
           </p>
-          <p className="mt-2 mb-2  text-sm"><b>Review : </b>
+          <p className=" mb-2  text-sm">
+            <b>Cooking method : </b>
+          {cooking_method}
+          </p>
+          <p className=" mb-2  text-sm"><b>Review : </b>
           {review}
           </p>
           <div className="flex items-center md-2 space-x-2">

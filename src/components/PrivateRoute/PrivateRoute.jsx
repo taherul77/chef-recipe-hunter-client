@@ -5,7 +5,7 @@
 import { useContext } from 'react';
 import { AuthContext } from '../../pages/Provider/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
-import { MagnifyingGlass } from  'react-loader-spinner'
+import { MagnifyingGlass } from  'react-loader-spinner';
 
 const PrivateRoute = ({children}) => {
     const { user, loader } = useContext(AuthContext);
@@ -16,6 +16,7 @@ const PrivateRoute = ({children}) => {
           visible={true}
           height="80"
           width="80"
+          
           ariaLabel="MagnifyingGlass-loading"
           wrapperStyle={{}}
           wrapperClass="MagnifyingGlass-wrapper"

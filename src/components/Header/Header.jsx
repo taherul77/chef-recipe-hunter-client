@@ -52,6 +52,16 @@ const Header = () => {
               Recipe
             </Link>
           </li>
+          <li>
+            <Link
+              to="/about"
+              aria-label="About"
+              title="About"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            >
+              About
+            </Link>
+          </li>
 
           <li>
             <Link
@@ -184,12 +194,24 @@ const Header = () => {
                     <li>
                       <Link
                         to="/recipes"
-                        aria-label="Our product"
-                        title="Our product"
+                        aria-label=" Recipe"
+                        title=" Recipe"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Recipe
                       </Link>
+                      
+                    </li>
+                    <li>
+                      <Link
+                        to="/recipes"
+                        aria-label="About"
+                        title="About"
+                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                      >
+                        About
+                      </Link>
+                      
                     </li>
                     <li>
                       <Link
@@ -203,14 +225,15 @@ const Header = () => {
                     </li>
 
                     <li>
-                      <a
-                        href="/login"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                        aria-label="Sign up"
-                        title="Sign up"
-                      >
-                        Login
-                      </a>
+                      <Link to="login"
+                      className="px-6 py-2 font-bold text-cyan-50 border-md rounded-md  bg-gradient-to-r from-blue-400 to-purple-500"
+                      aria-label="login"
+                      title="login">
+                      Login
+                      </Link>
+                      
+                        
+                     
                     </li>
                   </ul>
                 </nav>
