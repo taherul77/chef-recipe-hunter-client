@@ -160,7 +160,7 @@ const Register = () => {
             <button
                 disabled={!accepted}
               type="submit"
-              className="w-full px-8 py-3 font-semibold rounded-md bg-neutral text-secondary disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full px-6 py-2 font-bold text-cyan-50 border-md rounded-md  bg-gradient-to-r from-blue-400 to-purple-500  disabled:opacity-70 disabled:cursor-not-allowed"
             >
               Register
             </button>

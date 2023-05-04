@@ -13,7 +13,7 @@ const Content = ({ chef }) => {
       <div className="w-full max-w-sm hover:scale-105 overflow-hidden bg-white rounded-lg shadow-lg ">
       <LazyLoad >
       <img
-          className="object-cover w-full rounded-xl aspect-square"
+          className="object-cover w-full h-56 rounded-xl aspect-square"
           src={chef_.chef_photo}
           alt="avatar"
         />

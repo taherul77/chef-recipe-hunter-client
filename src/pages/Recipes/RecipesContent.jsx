@@ -12,7 +12,7 @@ const RecipesContent = ({recipes}) => {
       <div className="w-full max-w-sm hover:scale-105 overflow-hidden bg-white rounded-lg shadow-lg ">
       <LazyLoad >
       <img
-          className="object-cover w-full rounded-xl aspect-square"
+          className="object-cover h-60 w-full rounded-xl aspect-square"
           src={recipes_.image}
           alt="avatar"
         />

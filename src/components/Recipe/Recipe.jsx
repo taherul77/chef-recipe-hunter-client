@@ -9,7 +9,7 @@ const Recipe = ({ recipes }) => {
   const [favorite, setFavorite] = useState(false);
   const handleFavorite = () => {
     setFavorite(true);
-    toast.success("ADDDDDDDDDDD")
+    toast.success("Add Favorite Success")
 
    
   };
@@ -52,7 +52,7 @@ const Recipe = ({ recipes }) => {
           <button
           disabled={favorite===true}
            onClick={() => handleFavorite()}
-           className={`self-start mt-2 px-10 py-3 text-lg  font-medium rounded-3xl dark:bg-violet-400 dark:text-gray-900 disabled:cursor-not-allowed disabled:bg-red-500`}>
+           className={`self-start mt-2 px-10 py-3 text-lg  font-medium rounded-3xl bg-gradient-to-r from-blue-400 to-purple-500 disabled:cursor-not-allowed `}>
             {"Add to favorite"}
           </button>
         </div>

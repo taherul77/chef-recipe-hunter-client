@@ -19,7 +19,7 @@ const Header = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="bg-zinc-100 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8">
+    <div className="bg-zinc-100 h px-8 py-10 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8">
       <div className="relative flex items-center justify-between">
         <Link
           aria-label="Company"
@@ -27,7 +27,7 @@ const Header = () => {
           className="inline-flex items-center"
           to="/"
         >
-          <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
+          <span className="ml-2 text-xl font-bold tracking-wide  uppercase">
             Perfect Food
           </span>
         </Link>
@@ -60,7 +60,7 @@ const Header = () => {
               title="Our product"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
-              blog
+              Blog
             </Link>
           </li>
         </ul>
@@ -102,24 +102,15 @@ const Header = () => {
           </div>
         ) : (
           <ul className="col-span-3 justify-end items-center hidden space-x-8 lg:flex">
-            <li className="lg:hidden xl:block">
-              <Link
-                to="/login"
-                aria-label="Log in"
-                title="Log in"
-                className="font-medium tracking-wide text-neutral "
-              >
-                Log in
-              </Link>
-            </li>
+           
             <li>
               <Link
-                to="/register"
-                className="px-6 py-2 font-bold text-cyan-50 border-md rounded-md  bg-gradient-to-r from-blue-400 to-blue-500 "
-                aria-label="Register"
-                title="Register"
+                to="/login"
+                className="px-6 py-2 font-bold text-cyan-50 border-md rounded-md  bg-gradient-to-r from-blue-400 to-purple-500"
+                aria-label="login"
+                title="login"
               >
-                Register
+                login
               </Link>
             </li>
           </ul>
