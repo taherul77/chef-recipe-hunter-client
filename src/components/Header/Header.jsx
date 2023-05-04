@@ -44,15 +44,15 @@ const Header = () => {
           </li>
           <li>
             <Link
-              to="/"
+              to="/recipes"
               aria-label="Our product"
               title="Our product"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
-              Features
+              Recipe
             </Link>
           </li>
-          
+
           <li>
             <Link
               to="/blog"
@@ -63,69 +63,67 @@ const Header = () => {
               blog
             </Link>
           </li>
-          
         </ul>
         {user?.uid ? (
-            <div className="col-span-3 hidden lg:block">
-              <div className="flex items-center justify-end">
-                <h2 className="text-neutral font-medium text-sm md:text-lg">
-                  {user?.displayName}
-                </h2>
-                <div className="dropdown dropdown-hover dropdown-end">
-                  <label
-                    tabIndex={0}
-                    className="btn btn-ghost btn-circle avatar ml-2"
-                  >
-                    <div className="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
-                      {user?.photoURL ? (
-                        <img alt="" src={user.photoURL} />
-                      ) : (
-                        <img
-                          alt=""
-                          src="https://i.ibb.co/VvZScTP/blank-avatar.png"
-                        />
-                      )}
-                    </div>
-                  </label>
-                  <ul
-                    tabIndex={0}
-                    className="menu menu-compact dropdown-content p-2 shadow bg-secondary rounded-md w-52"
-                  >
-                    <li>
-                      <Link>Profile</Link>
-                    </li>
-                    <li>
-                      <Link onClick={signOut}>Logout</Link>
-                    </li>
-                  </ul>
-                </div>
+          <div className="col-span-3 hidden lg:block">
+            <div className="flex items-center justify-end">
+              <h2 className="text-neutral font-medium text-sm md:text-lg">
+                {user?.displayName}
+              </h2>
+              <div className="dropdown dropdown-hover dropdown-end">
+                <label
+                  tabIndex={0}
+                  className="btn btn-ghost btn-circle avatar ml-2"
+                >
+                  <div className="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
+                    {user?.photoURL ? (
+                      <img alt="" src={user.photoURL} />
+                    ) : (
+                      <img
+                        alt=""
+                        src="https://i.ibb.co/VvZScTP/blank-avatar.png"
+                      />
+                    )}
+                  </div>
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-compact dropdown-content p-2 shadow bg-secondary rounded-md w-52"
+                >
+                  <li>
+                    <Link>Profile</Link>
+                  </li>
+                  <li>
+                    <Link onClick={signOut}>Logout</Link>
+                  </li>
+                </ul>
               </div>
             </div>
-          ) : (
-            <ul className="col-span-3 justify-end items-center hidden space-x-8 lg:flex">
-              
-              <li className="lg:hidden xl:block">
-                <Link
-                  to="/login"
-                  aria-label="Log in"
-                  title="Log in"
-                  className="font-medium tracking-wide text-neutral "
-                >
-                  Log in
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/register"
-                  className="px-6 py-2 font-bold text-cyan-50 border-md rounded-md  bg-gradient-to-r from-blue-400 to-blue-500 "
-                  aria-label="Register"
-                  title="Register"
-                >
-                  Register
-                </Link>
-              </li>
-            </ul>
-          )}
+          </div>
+        ) : (
+          <ul className="col-span-3 justify-end items-center hidden space-x-8 lg:flex">
+            <li className="lg:hidden xl:block">
+              <Link
+                to="/login"
+                aria-label="Log in"
+                title="Log in"
+                className="font-medium tracking-wide text-neutral "
+              >
+                Log in
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/register"
+                className="px-6 py-2 font-bold text-cyan-50 border-md rounded-md  bg-gradient-to-r from-blue-400 to-blue-500 "
+                aria-label="Register"
+                title="Register"
+              >
+                Register
+              </Link>
+            </li>
+          </ul>
+        )}
         <div className="lg:hidden">
           <button
             aria-label="Open Menu"
@@ -153,31 +151,16 @@ const Header = () => {
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <a
-                      href="/"
+                    <Link
                       aria-label="Company"
-                      title="Company"
+                      title="Perfect Food"
                       className="inline-flex items-center"
+                      to="/"
                     >
-                      <svg
-                        className="w-8 text-deep-purple-accent-400"
-                        viewBox="0 0 24 24"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeMiterlimit="10"
-                        stroke="currentColor"
-                        fill="none"
-                      >
-                        <rect x="3" y="1" width="7" height="12" />
-                        <rect x="3" y="17" width="7" height="6" />
-                        <rect x="14" y="1" width="7" height="6" />
-                        <rect x="14" y="11" width="7" height="12" />
-                      </svg>
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                         Company
                       </span>
-                    </a>
+                    </Link>
                   </div>
                   <div>
                     <button
@@ -198,53 +181,44 @@ const Header = () => {
                 <nav>
                   <ul className="space-y-4">
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to="/"
+                        aria-label="Home"
+                        title="Home"
+                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                      >
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/recipes"
                         aria-label="Our product"
                         title="Our product"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        Product
-                      </a>
+                        Recipe
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to="/blog"
                         aria-label="Our product"
                         title="Our product"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        Features
-                      </a>
+                        blog
+                      </Link>
                     </li>
+
                     <li>
                       <a
-                        href="/"
-                        aria-label="Product pricing"
-                        title="Product pricing"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Pricing
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/"
-                        aria-label="About us"
-                        title="About us"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        About us
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/"
+                        href="/login"
                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                         aria-label="Sign up"
                         title="Sign up"
                       >
-                        Sign up
+                        Login
                       </a>
                     </li>
                   </ul>

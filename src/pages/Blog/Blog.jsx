@@ -38,7 +38,7 @@ const Blog = () => {
           </h2>
         </div>
       </div>
-      <ReactToPdf targetRef={ref} filename="prefect-food.pdf">
+      <ReactToPdf  y={25} scale={0.6} targetRef={ref} filename="prefect-food.pdf">
         {({ toPdf }) => (
           <button
             className="fixed bottom-5 right-5 bg-neutral text-secondary text-2xl py-2 px-2 rounded-full"
@@ -58,18 +58,24 @@ const Blog = () => {
             <div className="relative flex items-center justify-between p-5 rounded-sm">
               <div className="pr-4">
                 <h6 className="mb-2 font-semibold leading-5 text-lg">
-                  What is Cross-Origin Resource Sharing (CORS)?
+                  Differences between uncontrolled and controlled components ?
                 </h6>
                 <p className="text-sm">
-                  Cross-Origin Resource Sharing (CORS) is an HTTP-header based
-                  mechanism that allows a server to indicate any origins
-                  (domain, scheme, or port) other than its own from which a
-                  browser should permit loading resources. CORS also relies on a
-                  mechanism by which browsers make a "preflight" request to the
-                  server hosting the cross-origin resource, in order to check
-                  that the server will permit the actual request. In that
-                  preflight, the browser sends headers that indicate the HTTP
-                  method and headers that will be used in the actual request.
+                  Uncontrolled components are typically simpler to use, but also
+                  offer less control over the behavior of the component. They
+                  rely on the underlying DOM (Document Object Model) to manage
+                  the state of the component, rather than managing it through
+                  the component itself. This means that the component is
+                  responsible for rendering and receiving events from the DOM,
+                  but not for managing its own state.
+                  <br />
+                  On the other hand, controlled components are more complex to
+                  use, but offer more control over the behavior of the
+                  component. They manage their own state, which means that they
+                  are responsible for both rendering and receiving events, as
+                  well as managing the component's state. This allows the
+                  developer to have more control over the behavior of the
+                  component and to ensure that it behaves consistently.
                 </p>
               </div>
             </div>
@@ -82,27 +88,17 @@ const Blog = () => {
             <div className="relative flex items-center justify-between p-5 rounded-sm">
               <div className="pr-4">
                 <h6 className="mb-2 font-semibold leading-5 text-lg">
-                  What we use Firebase? What other options to implement
-                  authentication?
+                  How to validate React props using PropTypes?
                 </h6>
                 <p className="text-sm list-none">
-                  Google Firebase offers many features that pitch it as the
-                  go-to backend development tool for web and mobile apps. It
-                  reduces development workload and time. And it's a perfect
-                  prototyping tool. Firebase is simple, lightweight, friendly,
-                  and industrially recognized.Firebase is a less technical and
-                  time-saving alternative to writing full-fledged backend code
-                  for dynamic apps. <br />
-                  Competitors and Alternatives to Firebase Realtime Database:{" "}
+                  Import PropTypes at the top of the component file:
                   <br />
-                  <li>→ MongoDB</li>
-                  <li>→ Oracle Database</li>
-                  <li>→ Amazon Redshift</li>
-                  <li>→ DataStax Enterprise</li>
-                  <li>→ Redis Enterprise Cloud</li>
-                  <li>→ Cloudera Enterprise Data Hub</li>
-                  <li>→ Db2</li>
-                  <li>→ Couchbase Server</li>
+                  import PropTypes from 'prop-types';
+                  <br />
+                  Define the expected props for the component by adding a
+                  propTypes static property
+                  <br />
+                  Pass the props to the component
                 </p>
               </div>
             </div>
@@ -115,13 +111,25 @@ const Blog = () => {
             <div className="relative flex items-center justify-between p-5 rounded-sm">
               <div className="pr-4">
                 <h6 className="mb-2 font-semibold leading-5 text-lg">
-                  How does the private route work?
+                  Difference between nodejs and express js?
                 </h6>
                 <p className="text-sm">
-                  The react private route component renders child components
-                  (children) if the user is logged in. If not logged in the user
-                  is redirected to the /login page with the return url passed in
-                  the location state property.
+                  Node.js is a JavaScript runtime built on the V8 engine that
+                  allows developers to run JavaScript on the server-side. It
+                  provides a set of APIs for building server-side applications,
+                  including features like file system access, network
+                  connectivity, and database access. Node.js is used to build
+                  scalable and high-performance server-side applications, and it
+                  can be used to build a wide range of applications, from
+                  command-line tools to web servers.
+                  <br />
+                  Express.js is a web framework built on top of Node.js that
+                  simplifies the process of building web applications. It
+                  provides a set of APIs for handling HTTP requests and
+                  responses, and it includes features like routing, middleware,
+                  and templating. Express.js is used to build web applications
+                  and APIs, and it is a popular choice for building RESTful
+                  APIs.
                 </p>
               </div>
             </div>
@@ -134,33 +142,20 @@ const Blog = () => {
             <div className="relative flex items-center justify-between p-5 rounded-sm">
               <div className="pr-4">
                 <h6 className="mb-2 font-semibold leading-5 text-lg">
-                  What is Node? How does Node work?
+                  What is a custom hook, and why will you create a custom hook?
                 </h6>
                 <p className="text-sm">
-                  Node.js is an open-source backend javascript runtime
-                  environment. Node allows developers to write JavaScript code
-                  that runs directly in a computer process itself instead of in
-                  a browser. Node can, therefore, be used to write server-side
-                  applications with access to the operating system, file system,
-                  and everything else required to build fully-functional
-                  applications. Node.js is written in C, C++, and JavaScript,
-                  and it is built on the open-source V8 JavaScript engine which
-                  also powers JS in browsers such as Google Chrome. As V8
-                  supports new features in JavaScript, they are incorporated
-                  into Node.
-                  <br />
-                  Node.js accepts the request from the clients and sends the
-                  response, while working with the request node.js handles them
-                  with a single thread. To operate I/O operations or requests
-                  node.js use the concept of threads. Thread is a sequence of
-                  instructions that the server needs to perform. It runs
-                  parallel on the server to provide the information to multiple
-                  clients. Node.js is an event loop single-threaded language. It
-                  can handle concurrent requests with a single thread without
-                  blocking it for one request. <br />
-                  Node.js basically works on two concept:
-                  <li>Asynchronous</li>
-                  <li>Non-blocking I/O</li>
+                  In React, a custom hook is a JavaScript function that uses
+                  built-in hooks to provide a reusable piece of functionality
+                  that can be shared across multiple components. Custom hooks
+                  allow you to abstract complex logic and reuse it throughout
+                  your application, improving code organization and reducing
+                  repetition.
+                  <br />A custom hook is simply a JavaScript function that
+                  begins with the word "use". By convention, custom hooks are
+                  usually defined in a separate file and exported as a named
+                  function. Here is an example of a custom hook that uses the
+                  useEffect hook to fetch data from an API
                 </p>
               </div>
             </div>

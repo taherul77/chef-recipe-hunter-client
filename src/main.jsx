@@ -16,6 +16,7 @@ import ChefDetail from './pages/ChefDetails/ChefDetail';
 import { Toaster } from 'react-hot-toast';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Error from './components/Error/Error';
+import Recipes from './pages/Recipes/Recipes';
 
 const router = createBrowserRouter([
   {
@@ -36,8 +37,12 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path:"blog",
+        path:"/blog",
         element:<Blog></Blog>
+      },
+      {
+        path:"/recipes",
+        element:<Recipes></Recipes>
       },
       {
         path: "/chefDetail/:id",

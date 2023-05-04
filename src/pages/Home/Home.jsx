@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import Content from "./Content";
+
 import Banner from "../../components/Banner/Banner";
 import RecipeGallery from "../../components/RecipeGallery/RecipeGallery";
 import Team from "../../components/Team/Team";
 import FAQ from "../../components/FAQ/FAQ";
+import Content from "./Content";
 
 const Home = () => {
   const [chef, setChef] = useState([]);

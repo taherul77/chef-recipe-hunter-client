@@ -10,63 +10,59 @@ const FAQ = () => {
             FAQ
           </h2>
       <div className="py-12">
-        <div className="relative mb-8 block w-10/12 p-px mx-auto overflow-hidden transition duration-300 transform rounded-md border shadow-md hover:scale-105 group hover:shadow-xl">
-          <div className="absolute bottom-0 left-0 w-full h-[2px] duration-300 origin-left transform scale-x-0 bg-neutral group-hover:scale-x-100"></div>
-          <div className="absolute bottom-0 left-0 w-[2px] h-full duration-300 origin-bottom transform scale-y-0 bg-neutral group-hover:scale-y-100"></div>
-          <div className="absolute top-0 left-0 w-full h-[2px] duration-300 origin-right transform scale-x-0 bg-neutral group-hover:scale-x-100"></div>
-          <div className="absolute bottom-0 right-0 w-[2px] h-full duration-300 origin-top transform scale-y-0 bg-neutral group-hover:scale-y-100"></div>
-          <div className="relative flex items-center justify-between p-5 rounded-sm">
-            <div className="pr-4">
-              <h6 className="mb-2 font-semibold leading-5 text-lg">
-                What is Cross-Origin Resource Sharing (CORS)?
-              </h6>
-              <p className="text-sm">
-                Cross-Origin Resource Sharing (CORS) is an HTTP-header based
-                mechanism that allows a server to indicate any origins (domain,
-                scheme, or port) other than its own from which a browser should
-                permit loading resources. CORS also relies on a mechanism by
-                which browsers make a "preflight" request to the server hosting
-                the cross-origin resource, in order to check that the server
-                will permit the actual request. In that preflight, the browser
-                sends headers that indicate the HTTP method and headers that
-                will be used in the actual request.
-              </p>
+      <div className="relative mb-8 block w-10/12 p-px mx-auto overflow-hidden transition duration-300 transform rounded-md border shadow-md hover:scale-105 group hover:shadow-xl">
+            <div className="absolute bottom-0 left-0 w-full h-[2px] duration-300 origin-left transform scale-x-0 bg-neutral group-hover:scale-x-100"></div>
+            <div className="absolute bottom-0 left-0 w-[2px] h-full duration-300 origin-bottom transform scale-y-0 bg-neutral group-hover:scale-y-100"></div>
+            <div className="absolute top-0 left-0 w-full h-[2px] duration-300 origin-right transform scale-x-0 bg-neutral group-hover:scale-x-100"></div>
+            <div className="absolute bottom-0 right-0 w-[2px] h-full duration-300 origin-top transform scale-y-0 bg-neutral group-hover:scale-y-100"></div>
+            <div className="relative flex items-center justify-between p-5 rounded-sm">
+              <div className="pr-4">
+                <h6 className="mb-2 font-semibold leading-5 text-lg">
+                  Differences between uncontrolled and controlled components ?
+                </h6>
+                <p className="text-sm">
+                  Uncontrolled components are typically simpler to use, but also
+                  offer less control over the behavior of the component. They
+                  rely on the underlying DOM (Document Object Model) to manage
+                  the state of the component, rather than managing it through
+                  the component itself. This means that the component is
+                  responsible for rendering and receiving events from the DOM,
+                  but not for managing its own state.
+                  <br />
+                  On the other hand, controlled components are more complex to
+                  use, but offer more control over the behavior of the
+                  component. They manage their own state, which means that they
+                  are responsible for both rendering and receiving events, as
+                  well as managing the component's state. This allows the
+                  developer to have more control over the behavior of the
+                  component and to ensure that it behaves consistently.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="relative mb-8 block w-10/12 p-px mx-auto overflow-hidden transition duration-300 transform rounded-md border shadow-md hover:scale-105 group hover:shadow-xl">
-          <div className="absolute bottom-0 left-0 w-full h-[2px] duration-300 origin-left transform scale-x-0 bg-neutral group-hover:scale-x-100"></div>
-          <div className="absolute bottom-0 left-0 w-[2px] h-full duration-300 origin-bottom transform scale-y-0 bg-neutral group-hover:scale-y-100"></div>
-          <div className="absolute top-0 left-0 w-full h-[2px] duration-300 origin-right transform scale-x-0 bg-neutral group-hover:scale-x-100"></div>
-          <div className="absolute bottom-0 right-0 w-[2px] h-full duration-300 origin-top transform scale-y-0 bg-neutral group-hover:scale-y-100"></div>
-          <div className="relative flex items-center justify-between p-5 rounded-sm">
-            <div className="pr-4">
-              <h6 className="mb-2 font-semibold leading-5 text-lg">
-                What we use Firebase? What other options to implement
-                authentication?
-              </h6>
-              <p className="text-sm list-none">
-                Google Firebase offers many features that pitch it as the go-to
-                backend development tool for web and mobile apps. It reduces
-                development workload and time. And it's a perfect prototyping
-                tool. Firebase is simple, lightweight, friendly, and
-                industrially recognized.Firebase is a less technical and
-                time-saving alternative to writing full-fledged backend code for
-                dynamic apps. <br />
-                Competitors and Alternatives to Firebase Realtime Database:{" "}
-                <br />
-                <li>→ MongoDB</li>
-                <li>→ Oracle Database</li>
-                <li>→ Amazon Redshift</li>
-                <li>→ DataStax Enterprise</li>
-                <li>→ Redis Enterprise Cloud</li>
-                <li>→ Cloudera Enterprise Data Hub</li>
-                <li>→ Db2</li>
-                <li>→ Couchbase Server</li>
-              </p>
+          <div className="relative mb-8 block w-10/12 p-px mx-auto overflow-hidden transition duration-300 transform rounded-md border shadow-md hover:scale-105 group hover:shadow-xl">
+            <div className="absolute bottom-0 left-0 w-full h-[2px] duration-300 origin-left transform scale-x-0 bg-neutral group-hover:scale-x-100"></div>
+            <div className="absolute bottom-0 left-0 w-[2px] h-full duration-300 origin-bottom transform scale-y-0 bg-neutral group-hover:scale-y-100"></div>
+            <div className="absolute top-0 left-0 w-full h-[2px] duration-300 origin-right transform scale-x-0 bg-neutral group-hover:scale-x-100"></div>
+            <div className="absolute bottom-0 right-0 w-[2px] h-full duration-300 origin-top transform scale-y-0 bg-neutral group-hover:scale-y-100"></div>
+            <div className="relative flex items-center justify-between p-5 rounded-sm">
+              <div className="pr-4">
+                <h6 className="mb-2 font-semibold leading-5 text-lg">
+                  How to validate React props using PropTypes?
+                </h6>
+                <p className="text-sm list-none">
+                  Import PropTypes at the top of the component file:
+                  <br />
+                  import PropTypes from 'prop-types';
+                  <br />
+                  Define the expected props for the component by adding a
+                  propTypes static property
+                  <br />
+                  Pass the props to the component
+                </p>
+              </div>
             </div>
           </div>
-        </div>
         
       </div>
     </div>

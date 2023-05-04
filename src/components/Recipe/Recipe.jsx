@@ -13,7 +13,7 @@ const Recipe = ({ recipes }) => {
 
    
   };
-  const { image, name, description,rating, review } = recipes;
+  const { image, name, description,rating, ingredients, review } = recipes;
   return (
     <div>
       <div className="container flex flex-col mx-auto e mt-5 lg:flex-row">
@@ -34,6 +34,10 @@ const Recipe = ({ recipes }) => {
             <b>Description : </b>
           {description}
           </p>
+          <p className="mt-4 mb-2  text-sm">
+            <b>Ingredients : </b>
+          {ingredients}
+          </p>
           <p className="mt-2 mb-2  text-sm"><b>Review : </b>
           {review}
           </p>
@@ -48,7 +52,7 @@ const Recipe = ({ recipes }) => {
           <button
           disabled={favorite===true}
            onClick={() => handleFavorite()}
-           className={`self-start mt-2 px-10 py-3 text-lg  font-medium rounded-3xl dark:bg-violet-400 dark:text-gray-900 disabled:bg-red-500`}>
+           className={`self-start mt-2 px-10 py-3 text-lg  font-medium rounded-3xl dark:bg-violet-400 dark:text-gray-900 disabled:cursor-not-allowed disabled:bg-red-500`}>
             {"Add to favorite"}
           </button>
         </div>
