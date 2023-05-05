@@ -27,10 +27,7 @@ const Register = () => {
     
 
     console.log(name,photo,password,email);
-    if (password !== confirm) {
-      setError("Password doesn't match");
-      return;
-    }
+   
     setError("");
     createUser(email, password)
     .then(result =>{
@@ -110,21 +107,7 @@ const Register = () => {
               required
             />
           </div>
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="confirm" className="text-sm">
-                Confirm Password
-              </label>
-            </div>
-            <input
-              type="password"
-              name="confirm"
-              id="confirm"
-              placeholder="*****"
-              className="w-full px-3 py-2 border rounded-md border-gray-700 bg-secondary text-neutral"
-              required
-            />
-          </div>
+         
           <div>
             <label htmlFor="photo" className="block mb-2 text-sm">
               Photo Link

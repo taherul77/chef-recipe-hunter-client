@@ -5,6 +5,7 @@ import { AuthContext } from "../../pages/Provider/AuthProvider";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
 
   const signOut = () => {
     logOut()
@@ -13,13 +14,16 @@ const Header = () => {
       })
       .catch((error) => {});
   };
+  const handleProfileMenu = () => { 
+        setIsProfileMenuOpen(!isProfileMenuOpen); 
+    };
   const refreshPage = () => {
     window.location.reload();
   };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="bg-zinc-100 h px-8 py-10 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8">
+    <div className="bg-zinc-100  px-8 py-10 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8">
       <div className="relative flex items-center justify-between">
         <Link
           aria-label="Company"
@@ -75,41 +79,44 @@ const Header = () => {
           </li>
         </ul>
         {user?.uid ? (
-          <div className="col-span-3 hidden lg:block">
-            <div className="flex items-center justify-end">
-              <h2 className="text-neutral font-medium text-sm md:text-lg">
-                {user?.displayName}
-              </h2>
-              <div className="dropdown dropdown-hover dropdown-end">
-                <label
-                  tabIndex={0}
-                  className="btn btn-ghost btn-circle avatar ml-2"
-                >
-                  <div className="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
-                    {user?.photoURL ? (
-                      <img alt="" src={user.photoURL} />
-                    ) : (
-                      <img
-                        alt=""
-                        src="https://i.ibb.co/VvZScTP/blank-avatar.png"
-                      />
-                    )}
-                  </div>
-                </label>
-                <ul
-                  tabIndex={0}
-                  className="menu menu-compact dropdown-content p-2 shadow bg-secondary rounded-md w-52"
-                >
-                  <li>
-                    <Link>Profile</Link>
-                  </li>
-                  <li>
-                    <Link onClick={signOut}>Logout</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <div className="col-span-3 hidden lg:block"> 
+          <div className="flex items-center justify-end"> 
+              <div className="relative"> 
+                  {user?.photoURL ? ( 
+                      <img 
+                          onClick={() => handleProfileMenu()} 
+                          className="h-8 w-8 rounded-full cursor-pointer" 
+                          alt="" 
+                          src={user.photoURL} 
+                      /> 
+                  ) : ( 
+                      <img 
+                          onClick={() => handleProfileMenu()} 
+                          className="h-8 w-8 rounded-full cursor-pointer" 
+                          alt="" 
+                          src="https://i.ibb.co/VvZScTP/blank-avatar.png" 
+                      /> 
+                  )} 
+                  <ul 
+                      className={`${ 
+                          isProfileMenuOpen 
+                              ? "block" 
+                              : "hidden" 
+                      }  absolute border rounded-md top-10 right-0 w-28 bg-white`} 
+                  > 
+                      <li className="px-3 h-10 flex items-center justify-center hover:bg-black/[0.03] font-medium text-black"> 
+                          {user?.displayName} 
+                      </li> 
+                      <hr /> 
+                      <li className="px-3 h-10 flex items-center justify-center hover:bg-red-400 rounded-b-md font-medium text-black"> 
+                          <Link onClick={signOut}> 
+                              Logout 
+                          </Link> 
+                      </li> 
+                  </ul> 
+              </div> 
+          </div> 
+      </div>
         ) : (
           <ul className="col-span-3 justify-end items-center hidden space-x-8 lg:flex">
            

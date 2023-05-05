@@ -32,11 +32,10 @@ const Footer = () => {
               </Link>
             </div>
           </div>
- <hr className="my-6 border-gray-700 md:my-10 " />
-
+          <hr className="my-6 border-gray-700 md:my-10 " />
 
           <div className="flex flex-col items-center sm:flex-row sm:justify-between">
-            <p className="text-sm ">© Copyright 2021. All Rights Reserved.</p>
+            <p className="text-sm ">© Copyright 2023. All right reserved by SK Taherul Islam Taz.</p>
 
             <div className="flex -mx-2">
               <Link to="/">

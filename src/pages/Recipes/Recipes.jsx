@@ -6,7 +6,7 @@ import RecipesBanner from "./RecipesBanner";
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/recipes")
+    fetch("https://perfect-food-server.vercel.app/recipes")
       .then((res) => res.json())
       .then((data) => setRecipes(data));
   }, []);
