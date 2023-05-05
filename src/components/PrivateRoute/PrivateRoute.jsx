@@ -5,23 +5,21 @@
 import { useContext } from 'react';
 import { AuthContext } from '../../pages/Provider/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
-import { MagnifyingGlass } from  'react-loader-spinner';
+import { ProgressBar } from  'react-loader-spinner';
 
 const PrivateRoute = ({children}) => {
     const { user, loader } = useContext(AuthContext);
     const location = useLocation();
     if (loader) {
         return (
-          <MagnifyingGlass
-          visible={true}
+          <ProgressBar
           height="80"
-          width="80"
-          
-          ariaLabel="MagnifyingGlass-loading"
+          width="mx-auto"
+          ariaLabel="progress-bar-loading"
           wrapperStyle={{}}
-          wrapperClass="MagnifyingGlass-wrapper"
-          glassColor="#c0efff"
-          color="#e15b64"
+          wrapperClass="progress-bar-wrapper"
+          borderColor = '#F4442E'
+          barColor = '#51E5FF'
         />
         );
       }

@@ -47,7 +47,7 @@ const Content = ({ chef }) => {
                 type="button"
                 className="px-6 py-2 font-bold text-cyan-50 border-md rounded-md  bg-gradient-to-r from-blue-400 to-purple-500"
               >
-                View Details
+                View Recipes
               </button>
             </div>
           </Link>

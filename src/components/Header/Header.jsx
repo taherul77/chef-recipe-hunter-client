@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../pages/Provider/AuthProvider";
 
 const Header = () => {
@@ -14,9 +14,9 @@ const Header = () => {
       })
       .catch((error) => {});
   };
-  const handleProfileMenu = () => { 
-        setIsProfileMenuOpen(!isProfileMenuOpen); 
-    };
+  const handleProfileMenu = () => {
+    setIsProfileMenuOpen(!isProfileMenuOpen);
+  };
   const refreshPage = () => {
     window.location.reload();
   };
@@ -37,89 +37,100 @@ const Header = () => {
         </Link>
         <ul className="flex items-center hidden space-x-8 lg:flex">
           <li>
-            <Link
+            <NavLink
               to="/"
-              aria-label="Our product"
-              title="Our product"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              aria-label="Our HomePage"
+              title="Our HomePage"
+              className={({ isActive }) =>
+                isActive
+                  ? " border-md rounded-md underline text-blue-500"
+                  : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              }
             >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/recipes"
               aria-label="Our product"
               title="Our product"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              className={({ isActive }) =>
+                isActive
+                  ? " border-md rounded-md underline text-blue-500"
+                  : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              }
             >
               Recipe
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/about"
               aria-label="About"
               title="About"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              className={({ isActive }) =>
+                isActive
+                  ? " border-md rounded-md underline text-blue-500"
+                  : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              }
             >
               About
-            </Link>
+            </NavLink>
           </li>
 
           <li>
-            <Link
+            <NavLink
               to="/blog"
               aria-label="Our product"
               title="Our product"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              className={({ isActive }) =>
+                isActive
+                  ? " border-md rounded-md underline text-blue-500"
+                  : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              }
             >
               Blog
-            </Link>
+            </NavLink>
           </li>
         </ul>
         {user?.uid ? (
-          <div className="col-span-3 hidden lg:block"> 
-          <div className="flex items-center justify-end"> 
-              <div className="relative"> 
-                  {user?.photoURL ? ( 
-                      <img 
-                          onClick={() => handleProfileMenu()} 
-                          className="h-8 w-8 rounded-full cursor-pointer" 
-                          alt="" 
-                          src={user.photoURL} 
-                      /> 
-                  ) : ( 
-                      <img 
-                          onClick={() => handleProfileMenu()} 
-                          className="h-8 w-8 rounded-full cursor-pointer" 
-                          alt="" 
-                          src="https://i.ibb.co/VvZScTP/blank-avatar.png" 
-                      /> 
-                  )} 
-                  <ul 
-                      className={`${ 
-                          isProfileMenuOpen 
-                              ? "block" 
-                              : "hidden" 
-                      }  absolute border rounded-md top-10 right-0 w-28 bg-white`} 
-                  > 
-                      <li className="px-3 h-10 flex items-center justify-center hover:bg-black/[0.03] font-medium text-black"> 
-                          {user?.displayName} 
-                      </li> 
-                      <hr /> 
-                      <li className="px-3 h-10 flex items-center justify-center hover:bg-red-400 rounded-b-md font-medium text-black"> 
-                          <Link onClick={signOut}> 
-                              Logout 
-                          </Link> 
-                      </li> 
-                  </ul> 
-              </div> 
-          </div> 
-      </div>
+          <div className="col-span-3 hidden lg:block">
+            <div className="flex items-center justify-end">
+              <div className="relative">
+                {user?.photoURL ? (
+                  <img
+                    onClick={() => handleProfileMenu()}
+                    className="h-10 w-10 rounded-full cursor-pointer"
+                    alt=""
+                    src={user.photoURL}
+                  />
+                ) : (
+                  <img
+                    onClick={() => handleProfileMenu()}
+                    className="h-8 w-8 rounded-full cursor-pointer"
+                    alt=""
+                    src="https://i.ibb.co/VvZScTP/blank-avatar.png"
+                  />
+                )}
+                <ul
+                  className={`${
+                    isProfileMenuOpen ? "block" : "hidden"
+                  }  absolute border rounded-md top-10 right-0 w-28 bg-white`}
+                >
+                  <li className="px-3 h-10 flex items-center justify-center hover:bg-black/[0.03] font-medium text-black">
+                    {user?.displayName}
+                  </li>
+                  <hr />
+                  <li className="px-3 h-10 flex items-center justify-center hover:bg-red-400 rounded-b-md font-medium text-black">
+                    <Link onClick={signOut}>Logout</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         ) : (
           <ul className="col-span-3 justify-end items-center hidden space-x-8 lg:flex">
-           
             <li>
               <Link
                 to="/login"
@@ -166,7 +177,7 @@ const Header = () => {
                       to="/"
                     >
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                        Company
+                        Perfect Food
                       </span>
                     </Link>
                   </div>
@@ -189,58 +200,72 @@ const Header = () => {
                 <nav>
                   <ul className="space-y-4">
                     <li>
-                      <Link
+                      <NavLink
                         to="/"
                         aria-label="Home"
                         title="Home"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        className={({ isActive }) =>
+                          isActive
+                            ? " border-md rounded-md underline text-blue-500"
+                            : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        }
                       >
                         Home
-                      </Link>
+                      </NavLink>
                     </li>
                     <li>
-                      <Link
+                      <NavLink
                         to="/recipes"
                         aria-label=" Recipe"
                         title=" Recipe"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        className={({ isActive }) =>
+                          isActive
+                            ? " border-md rounded-md underline text-blue-500"
+                            : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        }
                       >
                         Recipe
-                      </Link>
-                      
+                      </NavLink>
                     </li>
                     <li>
-                      <Link
+                      <NavLink
                         to="/recipes"
                         aria-label="About"
                         title="About"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        className={({ isActive }) =>
+                          isActive
+                            ? " border-md rounded-md underline text-blue-500"
+                            : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        }
                       >
                         About
-                      </Link>
-                      
+                      </NavLink>
                     </li>
                     <li>
-                      <Link
+                      <NavLink
                         to="/blog"
-                        aria-label="Our product"
-                        title="Our product"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        aria-label="Blog"
+                        title="Blog"
+                        className={({ isActive }) =>
+                          isActive
+                            ? " border-md rounded-md underline text-blue-500"
+                            : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        }
                       >
                         blog
-                      </Link>
+                      </NavLink>
                     </li>
+                    
 
                     <li>
-                      <Link to="login"
-                      className="px-6 py-2 font-bold text-cyan-50 border-md rounded-md  bg-gradient-to-r from-blue-400 to-purple-500"
-                      aria-label="login"
-                      title="login">
-                      Login
+                      <Link
+                        to="login"
+                        className="px-6 py-2 font-bold text-cyan-50 border-md rounded-md  bg-gradient-to-r from-blue-400 to-purple-500"
+                        aria-label="login"
+                        title="login"
+                      >
+                        Login
                       </Link>
-                      
-                        
-                     
                     </li>
                   </ul>
                 </nav>
