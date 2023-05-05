@@ -229,7 +229,7 @@ const Header = () => {
                     </li>
                     <li>
                       <NavLink
-                        to="/recipes"
+                        to="/about"
                         aria-label="About"
                         title="About"
                         className={({ isActive }) =>
@@ -255,7 +255,7 @@ const Header = () => {
                         blog
                       </NavLink>
                     </li>
-                    
+
 
                     <li>
                       <Link
