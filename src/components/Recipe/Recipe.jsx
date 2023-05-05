@@ -39,7 +39,7 @@ const Recipe = ({ recipes }) => {
           {ingredients}
           </p>
           <p className=" mb-2  text-sm">
-            <b>Cooking method : </b>
+            <b>Cooking Method : </b>
           {cooking_method}
           </p>
           <p className=" mb-2  text-sm"><b>Review : </b>

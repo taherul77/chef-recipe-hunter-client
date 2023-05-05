@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="container px-6 py-8 mx-auto">
           <div className="flex flex-col items-center text-center">
             <Link to="/">
-              <h1 className="ml-2 text-xl font-bold tracking-wide  uppercase">
+              <h1 className="ml-2 text-xl font-bold tracking-wide  uppercase lg:text-3xl">
                 Perfect Food
               </h1>
             </Link>
@@ -35,7 +35,11 @@ const Footer = () => {
           <hr className="my-6 border-gray-700 md:my-10 " />
 
           <div className="flex flex-col items-center sm:flex-row sm:justify-between">
-            <p className="text-sm ">© Copyright 2023. All right reserved by SK Taherul Islam Taz.</p>
+            <p className="text-sm ">© Copyright 2023. All right reserved by 
+            <Link to="https://github.com/taherul77"> 
+            <span className="text-blue-500"> Sk Taherul Islam Taz</span>
+            </Link>
+            </p>
 
             <div className="flex -mx-2">
               <Link to="/">

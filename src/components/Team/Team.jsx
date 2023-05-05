@@ -7,7 +7,7 @@ const Team = () => {
       <section className="">
         <div className="container px-6 py-8 mx-auto">
           <h2 className="text-2xl font-semibold text-center 0 capitalize lg:text-3xl ">
-            Our Team
+            OUR TEAM
           </h2>
 
           <div className="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
